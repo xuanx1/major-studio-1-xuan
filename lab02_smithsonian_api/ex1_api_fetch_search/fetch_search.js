@@ -2,7 +2,7 @@
 // check API documentation for search here: http://edan.si.edu/openaccess/apidocs/#api-search-search
 
 // put your API key here;
-const apiKey = "";  
+const apiKey = "LghpWdrnggg1FDmHsNy6QbLDHVF1avviLG0vyYqF";  
 
 // search base URL
 const searchBaseURL = "https://api.si.edu/openaccess/api/v1.0/search";
