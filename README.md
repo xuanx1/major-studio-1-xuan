@@ -13,6 +13,6 @@ Alternatively, we can communicate this information in a more effectively manner 
 In the contexts of NMNH - Vertebrate Zoology - Fishes Division and NMNH - Botany Dept there will be a slight difference when it comes to the type of information to be displayed for them to be effective and relevant. For example, for the Fishes there might a necessity to show the depths of the oceans they come from, whereas for Botany, it is sufficient to show its location. And the data these groups are time sensitive are they are affected by seasons and time of the year – which might eventually be reflected as a dynamic description page of their own type and species.
 
 
+![SEA OF LIFE](https://github.com/user-attachments/assets/d5d5b817-454e-4d44-8c05-cacf8b3e5e67)
 3 "SEA OF LIFE"
 Focusing on attempting to visualise the Fish database for ease of access, I realise a good option to depict various species in their natural habitat might be to differentiate the depths they live in. Hence, the entire search UI will be based on a cross section visualisation from the beaches down to the depths of mariana trench. It allows the graphic to give viewers an idea of the context of the homes of respective species at a glance. CLicking on a fish /a set of fishes will direct the user to a dedicated page with details about them.
-![SEA OF LIFE](https://github.com/user-attachments/assets/d5d5b817-454e-4d44-8c05-cacf8b3e5e67)
