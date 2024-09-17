@@ -51,7 +51,9 @@ function displayData(){
   // yScale corresponds with amount of textiles per country
   const yScale = d3.scaleLinear()
     .domain([0, d3.max(allPlaces, d => d.count)+1])
+    // 0 is min, d3max is max value - range from data
     .range([height - margin.bottom, margin.top]); 
+    // range to be displayed in pixels
 
   // xScale corresponds with country names
   const xScale = d3.scaleBand()
