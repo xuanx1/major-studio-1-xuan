@@ -2,6 +2,8 @@
 // check API documentation for search here: http://edan.si.edu/openaccess/apidocs/#api-search-search
 // Using this data set https://collections.si.edu/search/results.htm?q=Flowers&view=grid&fq=data_source%3A%22Cooper+Hewitt%2C+Smithsonian+Design+Museum%22&fq=online_media_type%3A%22Images%22&media.CC0=true&fq=object_type:%22Embroidery+%28visual+works%29%22
 
+// https://collections.si.edu/search/results.htm?view=grid&fq=online_media_type%3A%22Images%22&fq=data_source%3A%22NMNH+-+Vertebrate+Zoology+-+Fishes+Division%22&q=photograph&media.CC0=true
+
 // put your API key here;
 const apiKey = "";  
 
@@ -10,7 +12,11 @@ const searchBaseURL = "https://api.si.edu/openaccess/api/v1.0/search";
 
 // constructing the initial search query
 // const search =  'mask AND unit_code:"FSG"';
-const search =  `Fish AND unit_code:"NMNHFISHES" AND online_media_type:"Images"`;
+const search =  `Photograph AND unit_code:"NMNHFISHES" AND online_media_type:"Images"`;
+
+// https://api.si.edu/openaccess/api/v1.0/search?q=online_media_type:%22Images%22+AND+type:edanmdm+AND+unit_code:%22NMNHFISHES%22+AND+content:"Photograph"+AND+&api_key=LghpWdrnggg1FDmHsNy6QbLDHVF1avviLG0vyYqF
+
+// https://api.si.edu/openaccess/api/v1.0/search?q=online_visual_material:true+AND+type:edanmdm+AND+photograph+AND+unit_code:%22NMNHFISHES%22+AND+&api_key=LghpWdrnggg1FDmHsNy6QbLDHVF1avviLG0vyYqF
 
 
 // array that we will write into
