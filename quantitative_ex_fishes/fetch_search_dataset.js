@@ -5,7 +5,7 @@
 // https://collections.si.edu/search/results.htm?view=grid&fq=online_media_type%3A%22Images%22&fq=data_source%3A%22NMNH+-+Vertebrate+Zoology+-+Fishes+Division%22&q=photograph&media.CC0=true
 
 // put your API key here;
-const apiKey = "";  
+const apiKey = "LghpWdrnggg1FDmHsNy6QbLDHVF1avviLG0vyYqF";  
 
 // search base URL
 const searchBaseURL = "https://api.si.edu/openaccess/api/v1.0/search";
@@ -81,18 +81,38 @@ function fetchAllData(url) {
 function addObject(objectData) {  
   
   // we've encountered that some places have data others don't
-  let currentPlace = "";
-  if(objectData.content.indexedStructured.place) {
-    currentPlace = objectData.content.indexedStructured.place[0];
+  let currentDepth = "";
+  if (objectData.content.freetext.physicalDescription) {
+    objectData.content.freetext.physicalDescription.forEach(description => {
+      if (description.label === "Depth (m)") {
+        currentDepth = description.content;
+      }
+    });
   }
 
-  myArray.push({
-    id: objectData.id,
-    title: objectData.title,
-    link: objectData.content.descriptiveNonRepeating.record_link,
-    place: currentPlace
-  })
+  // Only push the object if currentDepth is not empty
+  if (currentDepth) {
+    myArray.push({
+      id: objectData.id,
+      title: objectData.title,
+      link: objectData.content.descriptiveNonRepeating.record_link,
+      Depth: currentDepth
+    });
+  }
 }
+  
+//   let currentPlace = "";
+//   if(objectData.content.indexedStructured.place) {
+//     currentPlace = objectData.content.indexedStructured.place[0];
+//   }
+
+//   myArray.push({
+//     id: objectData.id,
+//     title: objectData.title,
+//     link: objectData.content.descriptiveNonRepeating.record_link,
+//     place: currentPlace
+//   })
+// }
 
 
 fetchSearchData(search);
