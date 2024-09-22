@@ -1,4 +1,4 @@
-concept sketching
+## concept sketching
 ![sketches-xuan](https://github.com/user-attachments/assets/7c313a2c-dd8d-408b-bdc4-d6d87b04497d)
 1 “In Your Face” Search Bar  
 When I was browsing and random generating search results through the API Query Discovery Tool, I realised that while the data is available in abundance, a robust classification or filtering system (and even GUI) is lacking for the users searching for relevant information – as I receive ample amount of irrelevant results or results that are too highly sophisticated which do not allow the average user to understand their contents. 
@@ -20,7 +20,8 @@ Focusing on attempting to visualise the Fish database for ease of access, I real
 
 
 
-preliminary concept
+## preliminary concept
+
 Sample GUI superimposed on the current SI website:
 
 Fishes thumbnails(currently depicted by vector placeholders fishes) from NMNH Fish database will be arranged according to the depth(m) field stated on each specimen/lot - the greater the depth, the lower the position of the image on the webpage - to see deepsea fishes, one has to scroll almost infinitely down.
