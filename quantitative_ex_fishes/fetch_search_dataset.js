@@ -5,7 +5,7 @@
 // https://collections.si.edu/search/results.htm?view=grid&fq=online_media_type%3A%22Images%22&fq=data_source%3A%22NMNH+-+Vertebrate+Zoology+-+Fishes+Division%22&q=photograph&media.CC0=true
 
 // put your API key here;
-// const apiKey = "LghpWdrnggg1FDmHsNy6QbLDHVF1avviLG0vyYqF";  
+const apiKey = "LghpWdrnggg1FDmHsNy6QbLDHVF1avviLG0vyYqF";  
 
 // search base URL
 const searchBaseURL = "https://api.si.edu/openaccess/api/v1.0/search";
@@ -79,7 +79,6 @@ function fetchAllData(url) {
 
 // create your own array with just the data you need
 function addObject(objectData) {  
-  
   // we've encountered that some places have data others don't
   let currentDepth = "";
   if (objectData.content.freetext.physicalDescription) {
@@ -90,13 +89,18 @@ function addObject(objectData) {
     });
   }
 
-  // Only push the object if currentDepth is not empty
+  // Only push the object if currentDepth is not empty - choose random number witin given range, in integers only
   if (currentDepth) {
+    let depthRange = currentDepth.split('-').map(d => parseFloat(d.trim()));
+    let randomDepth = depthRange.length === 2 
+      ? Math.round(Math.random() * (depthRange[1] - depthRange[0]) + depthRange[0])
+      : Math.round(depthRange[0]);
+
     myArray.push({
       id: objectData.id,
       title: objectData.title,
       link: objectData.content.descriptiveNonRepeating.record_link,
-      Depth: currentDepth
+      Depth: randomDepth
     });
   }
 }
