@@ -1,3 +1,5 @@
+//explained, corrected and refined with vscode copilot
+
 // sort depths -> limit between 0-100m -> allocate png for every 20m/species fish -> randomise result upon click -> populate at position of reefs -> limit until before deep sea 
 
 //  run sorting and load it on page length for "depth" as y axis = "depth" and for x axis use math.random to position png files of fish thumbnails on the page width
@@ -6,6 +8,7 @@
 
 
 const allDepth = [];
+const allLink = [];
 const filteredDepths = [];
 
 // Function to display sorted depths
@@ -90,8 +93,8 @@ limitedDepths.forEach(depth => {
     `https://github.com/user-attachments/assets/cd20375b-6246-4af2-ac05-82a7c6d82719`,
     `https://github.com/user-attachments/assets/a598e241-1452-436a-a9cd-427b5a0f0e67`,
     `https://github.com/user-attachments/assets/5e380432-852d-4f0c-8d8c-a3d65ee23a95`,
-    `https://github.com/user-attachments/assets/132901dd-eeeb-4711-89d1-c77b6c1113c9)`,
-    `https://github.com/user-attachments/assets/b309da2e-eb60-4333-ba9c-ced71e8b6cb4)`
+    `https://github.com/user-attachments/assets/132901dd-eeeb-4711-89d1-c77b6c1113c9`,
+    `https://github.com/user-attachments/assets/b309da2e-eb60-4333-ba9c-ced71e8b6cb4`
 
   ];
   fishElement.src = possiblePaths[Math.floor(Math.random() * possiblePaths.length)];
@@ -112,7 +115,7 @@ limitedDepths.forEach(depth => {
 
   // Disperse in y axis + restrict to window width
   anchorElement.style.top = `${1320 + depth + Math.random() * 1000}px`; // Randomize y position within a range
-  anchorElement.style.left = `${145 + Math.random() * (window.innerWidth - fishElement.width + 450)}px`; // Randomize x position within window width
+  anchorElement.style.left = `${145 + Math.random() * (window.innerWidth - fishElement.width - 330)}px`; // Randomize x position within window width
   anchorElement.style.zIndex = 10;
 
   // Append anchor element to reef container
