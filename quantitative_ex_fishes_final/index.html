@@ -4,16 +4,31 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>NMNH Fishes</title>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+
     </head>
     <body>
+        <script src="main.js"></script>
+        <!-- populate at position of reefs - limit until dark area -->
 
     <div class="Frame9" style="width: 1920px; height: 7569px; position: relative; background: white">
 
     <div class="Mockup011" style="width: 1920px; height: 7569px; left: 0px; top: 0px; position: absolute; background: url('https://github.com/user-attachments/assets/3f152594-451a-4280-810d-6337315900d6') no-repeat; background-size: cover; border: 1px black solid"></div>
 
+
+
     <a href="https://ocean.si.edu/ocean-life/marine-mammals/whales" target="_blank">
-        <img class="Whale" style="width: 1100px; height: 515px; left: 241px; top: 2650px; position: absolute" src="https://github.com/user-attachments/assets/b986e164-1512-4aff-aae9-f9207da6e86d" />
-    </a></a>
+        <img id="whale" class="Whale" style="width: 1100px; height: 515px; left: 241px; top: 2650px; position: absolute" src="https://github.com/user-attachments/assets/b986e164-1512-4aff-aae9-f9207da6e86d" />
+    </a>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var scrollPosition = window.pageYOffset;
+            var whale = document.getElementById('whale');
+            whale.style.top = (2450 + scrollPosition * 0.1) + 'px'; // Adjust the multiplier for desired parallax effect
+        });
+    </script>
+
 
     <img class="BaseLand1" style="width: 1326px; height: 5642px; left: 489px; top: 1035px; position: absolute; pointer-events: none;" src="https://github.com/user-attachments/assets/b256d9fc-05bf-4355-a26a-b39d70fc5001" />
 
@@ -38,12 +53,30 @@
     <div class="DeepSea" style="width: 1438.50px; height: 1849.50px; left: 274.50px; top: 4219.50px; position: absolute">
 
     <a href="https://biogeodb.stri.si.edu/caribbean/en/thefishes/species/4834" target="_blank">
-        <img class="Globin" style="width: 1009.50px; height: 229.50px; left: 429px; top: 1204.50px; position: absolute" src="https://github.com/user-attachments/assets/272f0143-dd4d-4188-b2cc-552373dee0cd" />
-    </a></a>
+        <img id="globin" class="Globin" style="width: 1009.50px; height: 229.50px; left: 429px; top: 1204.50px; position: absolute" src="https://github.com/user-attachments/assets/272f0143-dd4d-4188-b2cc-552373dee0cd" />
+    </a>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var scrollPosition = window.pageYOffset;
+            var globin = document.getElementById('globin');
+            globin.style.left = (1000 + scrollPosition * -0.1) + 'px'; // Adjust the multiplier for desired parallax effect on x-axis
+        });
+    </script>
 
     <a href="https://ocean.si.edu/ocean-life/invertebrates/giant-squid" target="_blank">
-        <img class="Squid" style="width: 745.50px; height: 807px; left: 0px; top: 0px; position: absolute" src="https://github.com/user-attachments/assets/87c74bfe-82c5-4f94-a702-ac829eab18e2" />
-    </a></a>
+        <img id="squid" class="Squid" style="width: 745.50px; height: 807px; left: 0px; top: 0px; position: absolute" src="https://github.com/user-attachments/assets/87c74bfe-82c5-4f94-a702-ac829eab18e2" />
+    </a>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var scrollPosition = window.pageYOffset;
+            var squid = document.getElementById('squid');
+            squid.style.top = (-800 + scrollPosition * 0.2) + 'px'; // Adjust the multiplier for desired parallax effect
+        });
+    </script>
+
+
 
     <a href="https://ocean.si.edu/ocean-life/fish/meet-tiny-bacteria-give-anglerfishes-their-spooky-glow" target="_blank">
         <img class="Angler" style="width: 385.50px; height: 234px; left: 96px; top: 930px; position: absolute" src="https://github.com/user-attachments/assets/3f6cc008-52ee-4bf3-80bc-7538d8f32dac" />

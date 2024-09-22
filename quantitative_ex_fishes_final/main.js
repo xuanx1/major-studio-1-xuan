@@ -1,116 +1,118 @@
+// sort depths -> limit between 0-100m -> allocate png for every 20m/species fish -> randomise result upon click -> populate at position of reefs -> limit until before deep sea 
 
-let textiles;
-let allPlaces = [];
+//  run sorting and load it on page length for "depth" as y axis = "depth" and for x axis use math.random to position png files of fish thumbnails on the page width
 
-// load the data
-d3.json('data/data.json').then(data => { 
-  textiles = data;
-  analyzeData();
-  displayData();
-});
+// consider minimum scales(readability) - max scales(to fit into screen but at the same time give ratio to smaller fishes) / a title / a legend / scales / units
 
-// analyze the data
-function analyzeData(){
-  let place;
+const allDepth = [];
 
-  // go through the list of textiles
-  textiles.forEach(n => {
-    place = n.place;
-    let match = false;
-
-    // see if their location already exists the allplaces array
-    allPlaces.forEach(p => {
-      if(p.name == place){
-        p.count++;
-        match = true;
-      }
-    });
-    // if not create a new entry for that place name
-      if(!match){
-        allPlaces.push({
-          name: place,
-          count: 1
-        });
-      }
+// load depth data
+d3.json('data-depth.json').then(depthData => {
+  depthData.forEach(fish => {
+    if (fish.depth) {
+      allDepth.push(fish.depth);
+    }
   });
 
-  // sort by amount of items in the list
-  allPlaces.sort((a, b) => (a.count < b.count) ? 1 : -1);
-  // console.log(allPlaces)
-}
+  // Filter depths between 0 and 100 meters
+  const filteredDepths = allDepth.filter(depth => depth >= 0 && depth <= 100);
 
-// display the data
-function displayData(){
+  // Sort depths in ascending order
+  filteredDepths.sort((a, b) => a - b);
+  displaySortedDepths(filteredDepths);
+
+  // Allocate PNG for every 20m/species fish
+  const depthGroups = {};
+  filteredDepths.forEach(depth => {
+    const group = Math.floor(depth / 20) * 20;
+    if (!depthGroups[group]) {
+      depthGroups[group] = [];
+    }
+    depthGroups[group].push(depth);
+  });
+
+  // Randomize result upon click
+  document.addEventListener('click', () => {
+    const randomDepths = filteredDepths.sort(() => Math.random() - 0.5);
+    console.log('Randomized Depths:', randomDepths);
+  });
+
+  // Populate at position of reefs
+  const reefContainer = document.getElementById('reefContainer');
+  filteredDepths.forEach(depth => {
+    const fishElement = document.createElement('img');
+    const group = Math.floor(depth / 20) * 20;
+    const possiblePaths = [
+      `path/to/fish_${group}_1.png`,
+      `path/to/fish_${group}_2.png`,
+      `path/to/fish_${group}_3.png`
+    ];
+    fishElement.src = possiblePaths[Math.floor(Math.random() * possiblePaths.length)];
+    fishElement.style.position = 'absolute';
+    fishElement.style.top = `${depth}px`;
+    fishElement.style.left = `${Math.random() * window.innerWidth}px`;
+
+    // Randomize color
+    const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    fishElement.style.filter = `hue-rotate(${Math.random() * 360}deg)`;
+
+    // Randomize size
+    const randomSize = Math.random() * 50 + 50; // Size between 50px and 100px
+    fishElement.style.width = `${randomSize}px`;
+    fishElement.style.height = 'auto';
+
+    reefContainer.appendChild(fishElement);
+  });
+});
+
+
+// Function to display sorted depths
+function displaySortedDepths(depths) {
+  console.log('Sorted Depths:', depths);
+
+
+
+
   
   // define dimensions and margins for the graphic
   const margin = ({top: 100, right: 50, bottom: 100, left: 80});
   const width = 1400;
   const height = 700;
 
-  // let's define our scales. 
-  // yScale corresponds with amount of textiles per country
-  const yScale = d3.scaleLinear()
-    .domain([0, d3.max(allPlaces, d => d.count)+1])
-    // 0 is min, d3max is max value - range from data
-    .range([height - margin.bottom, margin.top]); 
-    // range to be displayed in pixels
 
-  // xScale corresponds with country names
-  const xScale = d3.scaleBand()
-    .domain(allPlaces.map(d => d.name))
-    .range([margin.left, width - margin.right]);
 
-  // interpolate colors
-  const sequentialScale = d3.scaleSequential()
-    .domain([0, d3.max(allPlaces, d => d.count)])
-    .interpolator(d3.interpolateRgb("orange", "purple"));
+  // scrolling scale
+  // Function to translate scrolling distance to meters
+  function scrollToMeters(scrollDistance) {
+    // Assuming 1 pixel scroll equals 1 meter for simplicity
+    return scrollDistance;
+  }
 
-  // create an svg container from scratch
-  const svg = d3.select('body')
-    .append('svg')
-    .attr('width', width)
-    .attr('height', height);
+  // Add scroll event listener to the window
+  window.addEventListener('scroll', () => {
+    const scrollDistance = window.scrollY;
+    const meters = scrollToMeters(scrollDistance);
+    console.log(`Scrolled distance in meters: ${meters}`);
 
-  // attach a graphic element, and append rectangles to it
-  svg.append('g')
-    .selectAll('rect')
-    .data(allPlaces)
-    .join('rect')
-    .attr('x', d => {return xScale(d.name) })
-    .attr('y', d => {return yScale(d.count) })
-    .attr('height', d => {return yScale(0)-yScale(d.count) })
-    .attr('width', d => {return xScale.bandwidth() - 2 })
-    .style('fill', d => {return sequentialScale(d.count);});
- 
-
-  // Axes
-  // Y Axis
-  const yAxis =  d3.axisLeft(yScale).ticks(5)
-
-  svg.append('g')
-  .attr('transform', `translate(${margin.left},0)`)
-  .call(yAxis);
-
-  // X Axis
-  const xAxis =  d3.axisBottom(xScale).tickSize(0);
-
-  svg.append('g')
-    .attr('transform', `translate(0, ${height - margin.bottom})`)
-    .call(xAxis)
-    .selectAll('text')	
-    .style('text-anchor', 'end')
-    .attr('dx', '-.6em')
-    .attr('dy', '-0.1em')
-    .attr('transform', d => {return 'rotate(-45)' });
-
-  // Labelling the graph
-  svg.append('text')
-    .attr('font-family', 'sans-serif')
-    .attr('font-weight', 'bold')
-    .attr('font-size', 20)
-    .attr('y', margin.top-20)
-    .attr('x', margin.left)
-    .attr('fill', 'black')
-    .attr('text-anchor', 'start')
-    .text('Flowers in Embroidery by Country')
-}
+    // Update the text showing the scrolled distance
+    let scrollText = document.getElementById('scrollText');
+    if (!scrollText) {
+      scrollText = document.createElement('div');
+      scrollText.id = 'scrollText';
+      scrollText.style.position = 'fixed';
+      scrollText.style.top = '10px';
+      scrollText.style.right = '10px';
+      scrollText.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+      scrollText.style.padding = '5px';
+      scrollText.style.borderRadius = '5px';
+      scrollText.style.transition = 'transform 0.2s ease-out';
+      document.body.appendChild(scrollText);
+      scrollText.style.top = '10px';
+      scrollText.style.right = '10px';
+      scrollText.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+      scrollText.style.padding = '5px';
+      scrollText.style.borderRadius = '5px';
+      document.body.appendChild(scrollText);
+    }
+    scrollText.textContent = `Scrolled distance in meters: ${meters}`;
+  });
