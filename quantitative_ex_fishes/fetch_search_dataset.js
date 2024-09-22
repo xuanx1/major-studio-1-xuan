@@ -5,7 +5,7 @@
 // https://collections.si.edu/search/results.htm?view=grid&fq=online_media_type%3A%22Images%22&fq=data_source%3A%22NMNH+-+Vertebrate+Zoology+-+Fishes+Division%22&q=photograph&media.CC0=true
 
 // put your API key here;
-const apiKey = "LghpWdrnggg1FDmHsNy6QbLDHVF1avviLG0vyYqF";  
+const apiKey = "";  
 
 // search base URL
 const searchBaseURL = "https://api.si.edu/openaccess/api/v1.0/search";
