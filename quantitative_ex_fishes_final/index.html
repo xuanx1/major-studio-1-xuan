@@ -10,6 +10,8 @@
     <body>
         <script src="main.js"></script>
         <!-- populate at position of reefs - limit until dark area -->
+        <div id="reefContainer" style="position: grid; top: 0; left: 0; width: 100%; height: 100%;"></div>
+        </div>
 
     <div class="Frame9" style="width: 1920px; height: 7569px; position: relative; background: white">
 
@@ -60,7 +62,7 @@
         window.addEventListener('scroll', function() {
             var scrollPosition = window.pageYOffset;
             var globin = document.getElementById('globin');
-            globin.style.left = (1000 + scrollPosition * -0.1) + 'px'; // Adjust the multiplier for desired parallax effect on x-axis
+            globin.style.left = (900 + scrollPosition * -0.1) + 'px'; // Adjust the multiplier for desired parallax effect on x-axis
         });
     </script>
 
@@ -105,7 +107,7 @@
     </a></a>
 
 
-    <img class="SeaTop" style="width: 1707px; height: 5386px; left: 106px; top: 1246px; position: absolute; pointer-events: none;" src="https://github.com/user-attachments/assets/f3802479-0818-4148-9d15-fbabe17f2759" />
+    <img class="SeaTop" style="width: 1707px; height: 5386px; left: 106px; top: 1246px; position: absolute; pointer-events: none; z-index: 11;" src="https://github.com/user-attachments/assets/f3802479-0818-4148-9d15-fbabe17f2759" />
     </div>
 
     </body>

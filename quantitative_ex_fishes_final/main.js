@@ -4,115 +4,125 @@
 
 // consider minimum scales(readability) - max scales(to fit into screen but at the same time give ratio to smaller fishes) / a title / a legend / scales / units
 
+
 const allDepth = [];
-
-// load depth data
-d3.json('data-depth.json').then(depthData => {
-  depthData.forEach(fish => {
-    if (fish.depth) {
-      allDepth.push(fish.depth);
-    }
-  });
-
-  // Filter depths between 0 and 100 meters
-  const filteredDepths = allDepth.filter(depth => depth >= 0 && depth <= 100);
-
-  // Sort depths in ascending order
-  filteredDepths.sort((a, b) => a - b);
-  displaySortedDepths(filteredDepths);
-
-  // Allocate PNG for every 20m/species fish
-  const depthGroups = {};
-  filteredDepths.forEach(depth => {
-    const group = Math.floor(depth / 20) * 20;
-    if (!depthGroups[group]) {
-      depthGroups[group] = [];
-    }
-    depthGroups[group].push(depth);
-  });
-
-  // Randomize result upon click
-  document.addEventListener('click', () => {
-    const randomDepths = filteredDepths.sort(() => Math.random() - 0.5);
-    console.log('Randomized Depths:', randomDepths);
-  });
-
-  // Populate at position of reefs
-  const reefContainer = document.getElementById('reefContainer');
-  filteredDepths.forEach(depth => {
-    const fishElement = document.createElement('img');
-    const group = Math.floor(depth / 20) * 20;
-    const possiblePaths = [
-      `https://github.com/user-attachments/assets/cd20375b-6246-4af2-ac05-82a7c6d82719`,
-      `https://github.com/user-attachments/assets/a598e241-1452-436a-a9cd-427b5a0f0e67`,
-      `https://github.com/user-attachments/assets/5e380432-852d-4f0c-8d8c-a3d65ee23a95`
-    ];
-    fishElement.src = possiblePaths[Math.floor(Math.random() * possiblePaths.length)];
-    fishElement.style.position = 'absolute';
-    fishElement.style.top = `${depth}px`;
-    fishElement.style.left = `${Math.random() * window.innerWidth}px`;
-
-    // Randomize color
-    const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-    fishElement.style.filter = `hue-rotate(${Math.random() * 360}deg)`;
-
-    // Randomize size
-    const randomSize = Math.random() * 50 + 50; // Size between 50px and 100px
-    fishElement.style.width = `${randomSize}px`;
-    fishElement.style.height = 'auto';
-
-    reefContainer.appendChild(fishElement);
-  });
-});
-
+const filteredDepths = [];
 
 // Function to display sorted depths
-function displaySortedDepths(depths) {
-  console.log('Sorted Depths:', depths);
+function displaySortedDepths(Depth) {
+  console.log('Sorted Depths:', Depth);
 }
 
+// load depth data
+async function loadData() {
+  try {
+    const response = await fetch('data-depth.json');
+    const data = await response.json();
+    console.log('Data loaded successfully:', data);
 
+    // Log the structure of the data
+    console.log('Data Structure:', JSON.stringify(data, null, 2));
 
-  
-  // // define dimensions and margins for the graphic
-  // const margin = ({top: 100, right: 50, bottom: 100, left: 80});
-  // const width = 1400;
-  // const height = 700;
+    // Check if data is an array
+    if (!Array.isArray(data)) {
+      throw new Error('Data is not an array');
+    }
 
+    // Assuming data is an array of objects with a 'depth' property
+    allDepth.push(...data.map(item => {
+      if (item.Depth === undefined) {
+        console.warn('Item does not have a depth property:', item);
+        return null;
+      }
+      return item.Depth;
+    }).filter(Depth => Depth !== null));
 
+    // Log the loaded depths
+    console.log('All Depths:', allDepth);
 
-  // // scrolling scale
-  // // Function to translate scrolling distance to meters
-  // function scrollToMeters(scrollDistance) {
-  //   // Assuming 1 pixel scroll equals 1 meter for simplicity
-  //   return scrollDistance;
-  // }
+    // Filter depths between 0 and 100 meters and sort them
+    const filtered = allDepth.filter(Depth => Depth >= 5 && Depth <= 15).sort((a, b) => a - b);
+    console.log('Filtered and Sorted Depths:', filtered);
 
-  // // Add scroll event listener to the window
-  // window.addEventListener('scroll', () => {
-  //   const scrollDistance = window.scrollY;
-  //   const meters = scrollToMeters(scrollDistance);
-  //   console.log(`Scrolled distance in meters: ${meters}`);
+    // Push filtered depths to the global array
+    filteredDepths.push(...filtered);
 
-  //   // Update the text showing the scrolled distance
-  //   let scrollText = document.getElementById('scrollText');
-  //   if (!scrollText) {
-  //     scrollText = document.createElement('div');
-  //     scrollText.id = 'scrollText';
-  //     scrollText.style.position = 'fixed';
-  //     scrollText.style.top = '10px';
-  //     scrollText.style.right = '10px';
-  //     scrollText.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
-  //     scrollText.style.padding = '5px';
-  //     scrollText.style.borderRadius = '5px';
-  //     scrollText.style.transition = 'transform 0.2s ease-out';
-  //     document.body.appendChild(scrollText);
-  //     scrollText.style.top = '10px';
-  //     scrollText.style.right = '10px';
-  //     scrollText.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
-  //     scrollText.style.padding = '5px';
-  //     scrollText.style.borderRadius = '5px';
-  //     document.body.appendChild(scrollText);
-  //   }
-  //   scrollText.textContent = `Scrolled distance in meters: ${meters}`;
-  // });
+    // Display sorted depths
+    displaySortedDepths(filteredDepths);
+
+    // Allocate PNG for 5m interval of depth
+    const depthGroups = {};
+    filteredDepths.forEach(Depth => {
+      const group = Math.floor(Depth / 5) * 5;
+      if (!depthGroups[group]) {
+      depthGroups[group] = [];
+      }
+      depthGroups[group].push(Depth);
+    });
+
+    // Log the depth groups
+    console.log('Depth Groups:', depthGroups);
+
+    // Populate at position of reefs
+    const reefContainer = document.getElementById('reefContainer');
+
+// Limit to 50 images
+const limitedDepths = filteredDepths.slice(0, 40);
+
+// Create and append anchor elements to each randomized image
+limitedDepths.forEach(depth => {
+  const anchorElement = document.createElement('a');
+
+  const correspondingItem = data.find(item => item.Depth === depth);
+  if (correspondingItem && correspondingItem.link) {
+    anchorElement.href = correspondingItem.link;
+    anchorElement.target = '_blank';
+  } else {
+    anchorElement.href = '#';
+  }
+
+  anchorElement.style.position = 'absolute';
+  anchorElement.style.top = `${depth}px`;
+  anchorElement.style.left = `${Math.random() * window.innerWidth}px`;
+
+  const fishElement = document.createElement('img');
+  const possiblePaths = [
+    `https://github.com/user-attachments/assets/cd20375b-6246-4af2-ac05-82a7c6d82719`,
+    `https://github.com/user-attachments/assets/a598e241-1452-436a-a9cd-427b5a0f0e67`,
+    `https://github.com/user-attachments/assets/5e380432-852d-4f0c-8d8c-a3d65ee23a95`,
+    `https://github.com/user-attachments/assets/132901dd-eeeb-4711-89d1-c77b6c1113c9)`,
+    `https://github.com/user-attachments/assets/b309da2e-eb60-4333-ba9c-ced71e8b6cb4)`
+
+  ];
+  fishElement.src = possiblePaths[Math.floor(Math.random() * possiblePaths.length)];
+  fishElement.style.position = 'absolute';
+  fishElement.style.top = '0';
+  fishElement.style.left = '0';
+
+  // Randomize color
+  fishElement.style.filter = `hue-rotate(${Math.random() * 360}deg)`;
+
+  // Randomize size
+  const randomSize = Math.random() * 50 + 50; // Size between 50px and 100px
+  fishElement.style.width = `${randomSize}px`;
+  fishElement.style.height = 'auto';
+
+  // Append fish element to anchor element
+  anchorElement.appendChild(fishElement);
+
+  // Disperse in y axis + restrict to window width
+  anchorElement.style.top = `${1320 + depth + Math.random() * 1000}px`; // Randomize y position within a range
+  anchorElement.style.left = `${145 + Math.random() * (window.innerWidth - fishElement.width + 450)}px`; // Randomize x position within window width
+  anchorElement.style.zIndex = 10;
+
+  // Append anchor element to reef container
+  reefContainer.appendChild(anchorElement);
+});
+
+  } catch (error) {
+    console.error('Error loading data:', error);
+  }
+}
+
+// Call loadData to start the process
+loadData();
