@@ -1,1 +1,5 @@
-# major-studio-1-xuan
+## Major Studio One
+
+### Introduction
+
+### Design Brief / Problem Statement
