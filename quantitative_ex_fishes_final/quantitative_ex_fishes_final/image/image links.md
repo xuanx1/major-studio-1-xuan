@@ -16,7 +16,6 @@ Link Images
 ![1-04](https://github.com/user-attachments/assets/8725a66b-7672-4363-87e4-34514d27f08b)
 ![1-03](https://github.com/user-attachments/assets/b986e164-1512-4aff-aae9-f9207da6e86d)
 ![1_land](https://github.com/user-attachments/assets/3c89fbf3-5c84-4f7a-81d6-fd14b2ace215)
-![1_base](https://github.com/user-attachments/assets/3f152594-451a-4280-810d-6337315900d6)
 ![ranfish-06](https://github.com/user-attachments/assets/cd20375b-6246-4af2-ac05-82a7c6d82719)
 ![ranfish-05](https://github.com/user-attachments/assets/a598e241-1452-436a-a9cd-427b5a0f0e67)
 ![ranfish-04](https://github.com/user-attachments/assets/5e380432-852d-4f0c-8d8c-a3d65ee23a95)
