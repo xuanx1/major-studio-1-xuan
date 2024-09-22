@@ -43,9 +43,9 @@ d3.json('data-depth.json').then(depthData => {
     const fishElement = document.createElement('img');
     const group = Math.floor(depth / 20) * 20;
     const possiblePaths = [
-      `path/to/fish_${group}_1.png`,
-      `path/to/fish_${group}_2.png`,
-      `path/to/fish_${group}_3.png`
+      `https://github.com/user-attachments/assets/cd20375b-6246-4af2-ac05-82a7c6d82719`,
+      `https://github.com/user-attachments/assets/a598e241-1452-436a-a9cd-427b5a0f0e67`,
+      `https://github.com/user-attachments/assets/5e380432-852d-4f0c-8d8c-a3d65ee23a95`
     ];
     fishElement.src = possiblePaths[Math.floor(Math.random() * possiblePaths.length)];
     fishElement.style.position = 'absolute';
@@ -69,50 +69,50 @@ d3.json('data-depth.json').then(depthData => {
 // Function to display sorted depths
 function displaySortedDepths(depths) {
   console.log('Sorted Depths:', depths);
-
+}
 
 
 
   
-  // define dimensions and margins for the graphic
-  const margin = ({top: 100, right: 50, bottom: 100, left: 80});
-  const width = 1400;
-  const height = 700;
+  // // define dimensions and margins for the graphic
+  // const margin = ({top: 100, right: 50, bottom: 100, left: 80});
+  // const width = 1400;
+  // const height = 700;
 
 
 
-  // scrolling scale
-  // Function to translate scrolling distance to meters
-  function scrollToMeters(scrollDistance) {
-    // Assuming 1 pixel scroll equals 1 meter for simplicity
-    return scrollDistance;
-  }
+  // // scrolling scale
+  // // Function to translate scrolling distance to meters
+  // function scrollToMeters(scrollDistance) {
+  //   // Assuming 1 pixel scroll equals 1 meter for simplicity
+  //   return scrollDistance;
+  // }
 
-  // Add scroll event listener to the window
-  window.addEventListener('scroll', () => {
-    const scrollDistance = window.scrollY;
-    const meters = scrollToMeters(scrollDistance);
-    console.log(`Scrolled distance in meters: ${meters}`);
+  // // Add scroll event listener to the window
+  // window.addEventListener('scroll', () => {
+  //   const scrollDistance = window.scrollY;
+  //   const meters = scrollToMeters(scrollDistance);
+  //   console.log(`Scrolled distance in meters: ${meters}`);
 
-    // Update the text showing the scrolled distance
-    let scrollText = document.getElementById('scrollText');
-    if (!scrollText) {
-      scrollText = document.createElement('div');
-      scrollText.id = 'scrollText';
-      scrollText.style.position = 'fixed';
-      scrollText.style.top = '10px';
-      scrollText.style.right = '10px';
-      scrollText.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
-      scrollText.style.padding = '5px';
-      scrollText.style.borderRadius = '5px';
-      scrollText.style.transition = 'transform 0.2s ease-out';
-      document.body.appendChild(scrollText);
-      scrollText.style.top = '10px';
-      scrollText.style.right = '10px';
-      scrollText.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
-      scrollText.style.padding = '5px';
-      scrollText.style.borderRadius = '5px';
-      document.body.appendChild(scrollText);
-    }
-    scrollText.textContent = `Scrolled distance in meters: ${meters}`;
-  });
+  //   // Update the text showing the scrolled distance
+  //   let scrollText = document.getElementById('scrollText');
+  //   if (!scrollText) {
+  //     scrollText = document.createElement('div');
+  //     scrollText.id = 'scrollText';
+  //     scrollText.style.position = 'fixed';
+  //     scrollText.style.top = '10px';
+  //     scrollText.style.right = '10px';
+  //     scrollText.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+  //     scrollText.style.padding = '5px';
+  //     scrollText.style.borderRadius = '5px';
+  //     scrollText.style.transition = 'transform 0.2s ease-out';
+  //     document.body.appendChild(scrollText);
+  //     scrollText.style.top = '10px';
+  //     scrollText.style.right = '10px';
+  //     scrollText.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+  //     scrollText.style.padding = '5px';
+  //     scrollText.style.borderRadius = '5px';
+  //     document.body.appendChild(scrollText);
+  //   }
+  //   scrollText.textContent = `Scrolled distance in meters: ${meters}`;
+  // });
