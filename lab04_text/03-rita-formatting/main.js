@@ -47,5 +47,31 @@ function processRita(input) {
   });
 }
 
+// // Count the frequency of each part of speech
+// const posFrequency = {
+//   noun: 0,
+//   verb: 0,
+//   adjective: 0
+// };
+
+// pos.forEach(tag => {
+//   if (['nn', 'nns', 'nnp', 'nnps'].includes(tag)) {
+//     posFrequency.noun++;
+//   } else if (tag === 'vb') {
+//     posFrequency.verb++;
+//   } else if (['jj', 'jjr', 'jjs'].includes(tag)) {
+//     posFrequency.adjective++;
+//   }
+// });
+
+// // Log the frequency of each part of speech
+// console.log('Nouns:', posFrequency.noun);
+// console.log('Verbs:', posFrequency.verb);
+// console.log('Adjectives:', posFrequency.adjective);
+
 // Exercise:
 // Combine RiTa text processing with word frequency analysis to create a visualization that shows the frequency of different parts of speech in a text. 
+
+// frequency of types of words in this paragraph - how many nouns, verbs, adjectives, etc. are there? Bar chart
+
+

@@ -33,7 +33,8 @@ function analyzeData(lines) {
       // remove empty words
       if(word.length == 0) return;
       // remove special characters
-      phrase = word.replace(/[^a-zA-Z ]/g, "");
+      phrase = word.replace(/[&\/\#,+()$~%.'":*?<>{}]/g, "");
+      //shorter phrase = word.replace(/[^a-zA-Z ]/g, "") - non alphabetical characters are removed
       // check if the word is in the array
       let match = false;
       frequency.forEach(i => {
@@ -67,12 +68,12 @@ function displayData(frequency, title) {
   const height = 1080-margin.top;
 
   // let's define our scales. 
-  // yScale corresponds with amount of textiles per country
+  // yScale corresponds with repetition of words
   const yScale = d3.scaleLinear()
     .domain([0, d3.max(frequency, d => d.count)+1])
     .range([height - margin.bottom, margin.top]); 
 
-  // xScale corresponds with country names
+  // xScale corresponds with words
   const xScale = d3.scaleBand()
     .domain(frequency.map(d => d.word))
     .range([margin.left, width - margin.right]);
