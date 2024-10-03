@@ -1,3 +1,3 @@
-## github link
-### slides png
+## github link final
+### sketches, slides png final
 TBA
