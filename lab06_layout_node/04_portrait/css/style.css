@@ -30,7 +30,7 @@ h2 {
     border-bottom: 1px solid #aaa;
 }
 
-p {
+p { /**/
     margin-top: 20px;
     color: #555;
     text-align: center;
@@ -76,7 +76,7 @@ p {
 
 /* https://getcssscan.com/css-buttons-examples */
 
-/* CSS */
+/* CSS 1 button*/
 .nonSelected {
     appearance: none;
     background-color: transparent;
