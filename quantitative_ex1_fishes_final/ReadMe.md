@@ -1,4 +1,4 @@
-https://xuanx1.github.io/major-studio-1-xuan/quantitative_ex1_fishes_final/
+https://xuanx1.github.io/major-studio-1-xuan/quantitative_ex_fishes_final/index
 
 ![Studio1  Quantitative NMNH due 24_10_Page_01](https://github.com/user-attachments/assets/136724b1-0bd0-4f2e-8190-4274b103a2bb)
 ![Studio1  Quantitative NMNH due 24_10_Page_02](https://github.com/user-attachments/assets/62e824e3-67f1-4e1e-99ac-b7ae5ebe898e)
