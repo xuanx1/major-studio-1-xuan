@@ -6,6 +6,9 @@ Building on the previous quantitative exercise, we aspire to continue with the d
 ![MS1  Quantitative_Qualitative NMNH w bella](https://github.com/user-attachments/assets/a18ce989-b272-44fe-896c-42dfc2516a4b)
 ![Studio1  Quantitative NMNH due 24_10_Page_02](https://github.com/user-attachments/assets/62e824e3-67f1-4e1e-99ac-b7ae5ebe898e)
 
+
+![Studio1  Quantitative NMNH due 24_10_Page_11](https://github.com/user-attachments/assets/7085da54-0e37-4625-bbc6-043bae492b70)
+
 ## Storyboard
 ## Assembling the Sea
 ![loading](https://github.com/user-attachments/assets/6853d4e5-7e5c-4bcc-8ff6-0190381121e1)
