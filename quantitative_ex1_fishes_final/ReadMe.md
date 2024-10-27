@@ -1,6 +1,6 @@
 https://xuanx1.github.io/major-studio-1-xuan/quantitative_ex1_fishes_final/
 
-![Studio1  Quantitative NMNH due 24_10_Page_01](https://github.com/user-attachments/assets/136724b1-0bd0-4f2e-8190-4274b103a2bb)
+![MS1  Quantitative_Qualitative NMNH](https://github.com/user-attachments/assets/1b3f2ebb-d314-4c7d-bade-3f68cecc2aaa)
 ![Studio1  Quantitative NMNH due 24_10_Page_02](https://github.com/user-attachments/assets/62e824e3-67f1-4e1e-99ac-b7ae5ebe898e)
 ![Studio1  Quantitative NMNH due 24_10_Page_03](https://github.com/user-attachments/assets/4611f8f9-1ad9-4324-8ab5-7d103beb9a1c)
 ![Studio1  Quantitative NMNH due 24_10_Page_04](https://github.com/user-attachments/assets/4ea024fb-aac1-4d4c-b127-e117c9a0cf7a)
