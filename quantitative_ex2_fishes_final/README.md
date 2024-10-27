@@ -3,7 +3,7 @@ https://xuanx1.github.io/qualitative_ex2_longJohnSilvers/treemap/index
 ## Design Brief
 Building on the previous quantitative exercise, we aspire to continue with the data we have gathered about fishes beforehand and use it to introduce a visualisation that goes further than just simple categorising. With the same amount of data, we enlarge the information they can provide along with other minor enhancements. This time we are looking at introducing a graphic that can give readers an insight into fishes or marine creatures that live within similar depth ranges, sort of like finding our neighbours within a district.
 
-![MS1  Quantitative_Qualitative NMNH](https://github.com/user-attachments/assets/1b3f2ebb-d314-4c7d-bade-3f68cecc2aaa)
+![MS1  Quantitative_Qualitative NMNH w bella](https://github.com/user-attachments/assets/a18ce989-b272-44fe-896c-42dfc2516a4b)
 ![Studio1  Quantitative NMNH due 24_10_Page_02](https://github.com/user-attachments/assets/62e824e3-67f1-4e1e-99ac-b7ae5ebe898e)
 
 ## Storyboard
