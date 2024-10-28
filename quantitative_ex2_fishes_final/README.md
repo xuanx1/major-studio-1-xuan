@@ -17,7 +17,6 @@ Building on the previous quantitative exercise, we aspire to continue with the d
 ![Qualitative-12](https://github.com/user-attachments/assets/b98f3e12-ca09-4283-a274-17fad825ee1c)
 ![Qualitative-13](https://github.com/user-attachments/assets/db9a9771-91ac-465e-9dfe-b7d3f2ab20ee)
 ![Qualitative-14](https://github.com/user-attachments/assets/b97cc9cb-f7c2-4bbb-96c4-f7579f45c87f)
-![Qualitative-15](https://github.com/user-attachments/assets/939abe26-3c64-4f90-985d-eab2ffb3c949)
 ![Studio1  Quantitative NMNH due 24_10_Page_11](https://github.com/user-attachments/assets/7085da54-0e37-4625-bbc6-043bae492b70)
 
 ## Storyboard
