@@ -21,7 +21,7 @@ Outcome: Fish that live in similar depth ranges are classified into the same Vor
 Example: A swordfish, known to travel between epipelagic and mesopelagic zones, will be classified in the Voronoi cell closest to these depths.
 
 ![IMG_4949](https://github.com/user-attachments/assets/3bb518cf-a103-4ab3-9359-2a9011cbcb5c)
-GENERATIONAL LEAF - Structure of a Word Tree Diagram for Fish Classification
+GENERATIONAL LEAF - Structure of a Word Tree Diagram for Fish Classification. 
 Central Node - The root or starting point of the diagram is labeled “Fish Species.”
 From this node, branches lead into the three major categories:
 Oceans (where the species are found)
