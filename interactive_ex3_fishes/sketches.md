@@ -68,7 +68,7 @@ Gulper Eel
 *This part of the tree organizes fish species by the depths they inhabit, from surface waters to deep-sea zones.
 
 ![IMG_4949](https://github.com/user-attachments/assets/bb7cf092-e741-4fbb-8906-9785c92bb624)
-Scrollytelling - Life at Different Ocean Levels
+SCROLLYTELLING - Life at Different Ocean Levels
 Visual: A vertical scrolling animation through the ocean's water column (from surface to deep-sea zones).
 Scroll-through Example:
 Epipelagic Zone (0-200m): Sailfish and Mahi-mahi swim under sunlight.
