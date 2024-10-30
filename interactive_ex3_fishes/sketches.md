@@ -21,7 +21,7 @@ Outcome: Fish that live in similar depth ranges are classified into the same Vor
 Example: A swordfish, known to travel between epipelagic and mesopelagic zones, will be classified in the Voronoi cell closest to these depths.
 
 ![IMG_4949](https://github.com/user-attachments/assets/3bb518cf-a103-4ab3-9359-2a9011cbcb5c)
-Structure of a Word Tree Diagram for Fish Classification
+GENERATIONAL LEAF - Structure of a Word Tree Diagram for Fish Classification
 Central Node - The root or starting point of the diagram is labeled “Fish Species.”
 From this node, branches lead into the three major categories:
 Oceans (where the species are found)
@@ -68,7 +68,7 @@ Gulper Eel
 *This part of the tree organizes fish species by the depths they inhabit, from surface waters to deep-sea zones.
 
 ![IMG_4949](https://github.com/user-attachments/assets/bb7cf092-e741-4fbb-8906-9785c92bb624)
-GENERATIONAL LEAF - Life at Different Ocean Levels
+Scrollytelling - Life at Different Ocean Levels
 Visual: A vertical scrolling animation through the ocean's water column (from surface to deep-sea zones).
 Scroll-through Example:
 Epipelagic Zone (0-200m): Sailfish and Mahi-mahi swim under sunlight.
