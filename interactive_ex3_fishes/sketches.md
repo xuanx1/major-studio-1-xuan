@@ -1,6 +1,6 @@
 ## interactive_ex3
 #initial concept sketches
-![IMG_4948](https://github.com/user-attachments/assets/39004030-4524-40fa-b662-610a30cae3a8)
+![IMG_4947](https://github.com/user-attachments/assets/bd9e6006-8298-4969-953b-54eee98a82a0)
 SWIMMING BETWEEN CONTAINERS - Voronoi classification + 3 level filters animated sorting through d3 force
 1. Sorting by Oceans (Geospatial Clustering)
 Ocean zones (e.g., Pacific, Atlantic, Indian) act as centers or seeds for Voronoi cells.
@@ -20,7 +20,7 @@ Depth zones serve as the centers, and fish species are grouped based on which de
 Outcome: Fish that live in similar depth ranges are classified into the same Voronoi region.
 Example: A swordfish, known to travel between epipelagic and mesopelagic zones, will be classified in the Voronoi cell closest to these depths.
 
-![IMG_4949](https://github.com/user-attachments/assets/0c2c5454-d52f-4c81-8182-53f33c57cd22)
+![IMG_4949](https://github.com/user-attachments/assets/3bb518cf-a103-4ab3-9359-2a9011cbcb5c)
 Structure of a Word Tree Diagram for Fish Classification
 Central Node - The root or starting point of the diagram is labeled “Fish Species.”
 From this node, branches lead into the three major categories:
@@ -67,7 +67,7 @@ Anglerfish
 Gulper Eel
 *This part of the tree organizes fish species by the depths they inhabit, from surface waters to deep-sea zones.
 
-![IMG_4947](https://github.com/user-attachments/assets/bd9e6006-8298-4969-953b-54eee98a82a0)
+![IMG_4949](https://github.com/user-attachments/assets/bb7cf092-e741-4fbb-8906-9785c92bb624)
 GENERATIONAL LEAF - Life at Different Ocean Levels
 Visual: A vertical scrolling animation through the ocean's water column (from surface to deep-sea zones).
 Scroll-through Example:
