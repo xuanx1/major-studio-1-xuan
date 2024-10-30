@@ -67,7 +67,7 @@ Anglerfish
 Gulper Eel
 *This part of the tree organizes fish species by the depths they inhabit, from surface waters to deep-sea zones.
 
-![IMG_4949](https://github.com/user-attachments/assets/bb7cf092-e741-4fbb-8906-9785c92bb624)
+![IMG_4948](https://github.com/user-attachments/assets/ed336695-d9f7-44f8-a170-6caccaefb70f)
 SCROLLYTELLING - Life at Different Ocean Levels
 Visual: A vertical scrolling animation through the ocean's water column (from surface to deep-sea zones).
 Scroll-through Example:
