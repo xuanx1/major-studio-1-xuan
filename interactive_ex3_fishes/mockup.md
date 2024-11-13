@@ -1,5 +1,4 @@
-## interactive_ex3
-#mockup
+## interactive_ex3 mockup
 
 ## Parent Ocean Filter
 ![mockup3-01](https://github.com/user-attachments/assets/ca905b10-6a82-4b94-9bd1-9c78ee097642)
