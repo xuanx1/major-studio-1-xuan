@@ -1,4 +1,5 @@
-https://xuanx1.github.io/major-studio-1-xuan/quantitative_ex1_fishes_final/
+### [Quantitative](https://xuanx1.github.io/major-studio-1-xuan/quantitative_ex1_fishes_final/)
+In this exercise, we dive into crafting a visualisation that uses depth as its main theme of illustrating the diversity of our oceans. By using the depth data gathered from each fish, we move beyond simple categorization and enhance the storytelling potential of the information. The aim is to provide readers with an intuitive glimpse into the ecosystems of the deep, where various species coexist and thrive within overlapping environmental niches. Through this approach, it deepens the audience’s understanding of how biodiversity unfolds across different oceanic depths.
 
 ![MS1  Quantitative_Qualitative NMNH](https://github.com/user-attachments/assets/1b3f2ebb-d314-4c7d-bade-3f68cecc2aaa)
 ![Studio1  Quantitative NMNH due 24_10_Page_02](https://github.com/user-attachments/assets/62e824e3-67f1-4e1e-99ac-b7ae5ebe898e)
