@@ -22,6 +22,9 @@ In this exercise, we dive into crafting a visualisation that uses depth as its m
 Building on the previous quantitative exercise, we aspire to continue with the data we have gathered about fishes beforehand and use it to introduce a visualisation that goes further than just simple categorising. With the same amount of data, we enlarge the information they can provide along with other minor enhancements. This time we are looking at introducing a graphic that can give readers an insight into fishes or marine creatures that live within similar depth ranges, sort of like finding our neighbours within a district.
 ![MS1  Qualitative NMNH_Page_05](https://github.com/user-attachments/assets/a473e741-a7d4-4c9e-a5d3-4a528b3d946f)
 
-### Interactive - add url
-description
+### [Interactive](https://jjeeong17.github.io/ex3_final/radialtree.html)
+Moving forward to explore the translation of fish scientific names to their common names in our next visualisation, we bridge the gap between technical nomenclature and everyday terminology, this enhancement aims to make the information more accessible and relatable for a wider audience. It would allow readers not only to understand species distributions but also to associate these findings with familiar species they may already recognize, further enriching the context and usability of the visualization.
+
+The word map is a dynamic visualization that classifies fish species by their native oceans and archetypes, such as predators, scavengers, or reef dwellers, while translating their scientific names into common names for accessibility. Organized into distinct regions, the map highlights the biodiversity of aquatic life in each ocean, from the Atlantic to the Pacific. It bridges scientific taxonomy and practical understanding, showcasing the relationships between species, their ecological roles, and geographic distribution. This tool serves as a valuable resource for researchers, educators, and enthusiasts, fostering deeper insights into marine biodiversity.
+
 hero image
