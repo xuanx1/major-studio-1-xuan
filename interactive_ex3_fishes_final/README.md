@@ -1,11 +1,6 @@
-insert github page link here
+### [Interactive](https://jjeeong17.github.io/ex3_final/radialtree.html)
+Moving forward to explore the translation of fish scientific names to their common names in our next visualisation, we bridge the gap between technical nomenclature and everyday terminology, this enhancement aims to make the information more accessible and relatable for a wider audience. It would allow readers not only to understand species distributions but also to associate these findings with familiar species they may already recognize, further enriching the context and usability of the visualization.
 
-## Design Brief
-Building on the previous quantitative exercise, we aspire to continue with the data we have gathered about fishes beforehand and use it to introduce a visualisation that goes further than just simple categorising. With the same amount of data, we enlarge the information they can provide along with other minor enhancements. This time we are looking at introducing a graphic that can give readers an insight into fishes or marine creatures that live within similar depth ranges, sort of like finding our neighbours within a district.
+The word map is a dynamic visualization that classifies fish species by their native oceans and archetypes, such as predators, scavengers, or reef dwellers, while translating their scientific names into common names for accessibility. Organized into distinct regions, the map highlights the biodiversity of aquatic life in each ocean, from the Atlantic to the Pacific. It bridges scientific taxonomy and practical understanding, showcasing the relationships between species, their ecological roles, and geographic distribution. This tool serves as a valuable resource for researchers, educators, and enthusiasts, fostering deeper insights into marine biodiversity.
 
-## Home
-screenshot
-
-## functions
-screenshot
-
+-add hero image + UI
