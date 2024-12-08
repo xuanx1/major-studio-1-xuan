@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Word Treemap</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <style>
+      body {
+        font-family: 'Open Sans', sans-serif;
+        background-color: #fff;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        overflow-x: auto;
+        width: 200vw; /* Horizontal scrolling */
+      }
+
+      .section {
+        width: 40vw;
+        padding: 10px;
+        position: relative;
+      }
+
+      .ocean-list li.selected,
+      .species-list li.selected,
+      .archetype-list li.selected {
+        color: #127c91;
+        font-weight: bold;
+      }
+
+      @font-face {
+        font-family: 'Futura Md BT Medium';
+        src: url('fonts/futura-md-bt-medium.ttf') format('ttf');
+      }
+
+      .common-name-list li.hovered,
+      .common-name-list li.selected {
+        color: #127c91;
+        font-family: 'Futura Md BT Medium', sans-serif;
+        font-size: 40px;
+      }
+      .ocean-list li.hovered,
+      .species-list li.hovered,
+      .archetype-list li.hovered {
+        color: #127c91;
+      }
+
+      .title {
+        font-family: 'Cormorant', serif;
+        font-size: 100px;
+        font-weight: bold;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        margin: 0;
+        white-space: nowrap; /* Prevent line breaks */
+      }
+
+      .ocean-list,
+      .species-list,
+      .archetype-list,
+      .common-name-list {
+        font-family: 'Cormorant', serif;
+        list-style-type: none;
+        padding: 0;
+        font-weight: 600;
+        color: #636363;
+      }
+
+      .ocean-list {
+        font-size: 70px;
+        line-height: 130px;
+        position: absolute;
+        top: 150px;
+        left: 600px;
+        white-space: nowrap; /* Prevent line breaks */
+      }
+
+      .species-list {
+        font-size: 65px;
+        line-height: 130px;
+        position: absolute;
+        top: 220px;
+        left: 500px;
+        white-space: nowrap; /* Prevent line breaks */
+      }
+
+      .archetype-list {
+        font-size: 60px;
+        line-height: 110px;
+        position: absolute;
+        top: 350px;
+        left: 350px;
+      }
+
+      .common-name-list {
+        font-size: 45px;
+        line-height: 70px;
+        list-style-type: circle;
+        position: absolute;
+        top: 450px;
+        left: 80px;
+        white-space: nowrap;
+      }
+
+      .popup {
+        position: fixed;
+        top: 55%;
+        left: 85%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        display: none;
+        padding-bottom: 10px;
+      }
+
+      .popup-content {
+        padding: 18px;
+        text-align: center;
+      }
+
+      .popup img {
+        margin-top: 18px;
+        margin-bottom: -20px; /* Reduce bottom margin under the image */
+        width: 350px; /* Fixed width */
+        height: 250px; /* Fixed height */
+        object-fit: contain; /* Maintain aspect ratio, prevent clipping */
+        border-radius: 5px; /* Slightly rounded corners */
+        background-color: #f0f0f0; /* Add background color for empty spaces */
+      }
+
+      @font-face {
+        font-family: 'Open Sans';
+        src: url('fonts/OpenSans-ExtraBold.ttf') format('ttf');
+        font-weight: 650;
+      }
+
+      #popup-common-name {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 30px; /* Font size */
+        font-weight: 650;
+        color: #127c91; /* Requested color */
+        margin-bottom: -6px; /* Adjust spacing with the title */
+        white-space: nowrap; /* Prevent line breaks */
+      }
+      /* Title Name Style */
+      #popup-title {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 15px;
+        font-style: italic; /* Italic style */
+        color: #636363; /* Light gray color */
+        margin-bottom: 10px; /* Adjust spacing with other elements */
+      }
+
+      /* Label styles (Ocean, Species, etc.) */
+      .popup-info p {
+        margin: 8px 0; /* Reduce top and bottom spacing to 8px */
+      }
+
+      /* Label styles (Ocean, Species, etc.) */
+      .popup-info p strong {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 15px; /* Font size for labels */
+        color: #636363; /* Gray color */
+      }
+      @font-face {
+        font-family: 'Open Sans';
+        src: url('fonts/OpenSans-SemiBold.ttf') format('ttf');
+        font-weight: 600;
+      }
+      /* Value styles */
+      .popup-info p span {
+        font-weight: 600;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 18px; /* Font size for values */
+        color: #127c91; /* Requested color for values */
+      }
+
+      #popup-map {
+        height: 200px;
+        width: 100%; /* Fit to popup width */
+        margin-top: -13px;
+        border-radius: 5px;
+
+        /* Center alignment */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 6px; /* Position at the top of the popup */
+        right: 15px; /* Position at the right of the popup */
+        width: 27px;
+        height: 27px;
+        background-image: url('icon-close-2.png'); /* Default close icon */
+        background-size: cover;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        z-index: 1001; /* Display above the popup */
+        transition: transform 0.2s ease-in-out; /* Animation effect on click */
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section">
+      <h1 class="title">Discover Fish</h1>
+      <ul class="ocean-list"></ul>
+    </div>
+    <div class="section">
+      <ul id="species-list" class="species-list hidden"></ul>
+    </div>
+    <div class="section">
+      <ul id="archetype-list" class="archetype-list hidden"></ul>
+    </div>
+    <div class="section">
+      <ul id="common-name-list" class="common-name-list hidden"></ul>
+    </div>
+    <div id="popup" class="popup hidden">
+      <div class="popup-content">
+        <div class="popup-top">
+          <img id="popup-image" src="" alt="Fish Image" />
+          <div id="close-popup" class="close-btn"></div>
+          <!-- Close button -->
+        </div>
+        <div class="popup-bottom">
+          <div class="popup-info">
+            <h2 id="popup-common-name"></h2>
+            <p id="popup-title"></p>
+            <p><strong>Ocean:</strong> <span id="popup-ocean"></span></p>
+            <p><strong>Species:</strong> <span id="popup-species"></span></p>
+            <p>
+              <strong>Archetype:</strong> <span id="popup-archetype"></span>
+            </p>
+            <p><strong>Depth:</strong> <span id="popup-depth"></span></p>
+          </div>
+          <div id="popup-map" class="popup-map"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="radialtree.js"></script>
+  </body>
+</html>
