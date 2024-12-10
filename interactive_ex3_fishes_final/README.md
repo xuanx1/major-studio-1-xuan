@@ -9,7 +9,7 @@ The word map is a dynamic visualization that classifies fish species by their na
 ![Ex3_Page_04](https://github.com/user-attachments/assets/f5e21406-84b7-4a58-85c3-8a274fb3b75c)
 ![Ex3_Page_05](https://github.com/user-attachments/assets/b6ccbcdb-433b-4125-aa71-af2deac125b0)
 ![Ex3_Page_06](https://github.com/user-attachments/assets/d706bbb5-b7c5-4258-8545-3b5bdb0f2552)
-![Ex3_Page_07](https://github.com/user-attachments/assets/ab7302f4-e5c3-492d-9d6c-5d2f46186ed0)
+![ex3](https://github.com/user-attachments/assets/a6f9e7d8-6fc0-44fc-a945-5520f9c20044)
 ![Ex3_Page_08](https://github.com/user-attachments/assets/9e7223d1-76a3-4de3-a371-f23914bbeb19)
 ![Ex3_Page_09](https://github.com/user-attachments/assets/f27c2d1a-a2c8-473c-8b26-5d7442d81c0e)
 ![Ex3_Page_10](https://github.com/user-attachments/assets/e0cf4d92-76d9-4b22-b023-1da1ebf576ae)
