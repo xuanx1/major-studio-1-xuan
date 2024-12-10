@@ -33,9 +33,13 @@ The word map is a dynamic visualization that classifies fish species by their na
 
 ### Acknowledgements
 https://edan.si.edu/openaccess/discover/
+
 https://techdocs.gbif.org/en/openapi/v1/species
+
 https://collections.nmnh.si.edu/search/fishes/?v=g1
+
 https://biogeodb.stri.si.edu/caribbean/en/findafish/
+
 https://naturalhistory.si.edu/research/vertebrate-zoology/fishes
 
 https://collections.si.edu/search/results.htm?view=grid&fq=online_media_type%3A%22Images%22&fq=data_source%3A%22NMNH+-+Vertebrate+Zoology+-+Fishes+Division%22&q=photograph&media.CC0=true
